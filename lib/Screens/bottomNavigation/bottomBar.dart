@@ -18,6 +18,9 @@ class BottomBar extends StatefulWidget {
 
 class _BottomBarState extends State<BottomBar> {
   int _selectedIndex = 0;
+
+  //int _select = 1;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

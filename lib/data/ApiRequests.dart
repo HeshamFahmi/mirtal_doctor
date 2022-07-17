@@ -356,12 +356,11 @@ class ApiRequests {
     request.headers.addAll(headers);
 
     http.StreamedResponse response = await request.send();
-
+    hideLoading(context);
     if (response.statusCode == 200) {
       var myResponse = await response.stream.bytesToString();
 
       showSuccessToast(json.decode(myResponse)["message"]);
-      hideLoading(context);
     } else {
       showFailedToast(response.reasonPhrase.toString());
     }

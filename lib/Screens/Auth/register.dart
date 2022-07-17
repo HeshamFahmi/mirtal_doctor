@@ -228,44 +228,6 @@ class _RegistrationState extends State<Registration> {
                       fontSize: 20),
                   hint: const Padding(
                     padding: EdgeInsets.only(right: 10.0),
-                    child: Text("من فضلك اختر المنطقه",
-                        style: TextStyle(
-                            fontSize: 15, fontWeight: FontWeight.normal)),
-                  ),
-                  isExpanded: true,
-                  items: regions.map((String value) {
-                    return DropdownMenuItem<String>(
-                      value: value,
-                      child: Text(value),
-                    );
-                  }).toList(),
-                  value: region,
-                  onChanged: (newValue) {
-                    setState(() {
-                      region = newValue;
-                    });
-                  },
-                ),
-              ),
-            ),
-            customSizedBox(0.0, 10.0),
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Container(
-                width: double.infinity,
-                padding: const EdgeInsets.only(right: 10, left: 10),
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    border: Border.all(color: Colors.grey),
-                    borderRadius: BorderRadius.circular(10.0)),
-                child: DropdownButton<String>(
-                  underline: Container(),
-                  style: TextStyle(
-                      color: darkenAppColor,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20),
-                  hint: const Padding(
-                    padding: EdgeInsets.only(right: 10.0),
                     child: Text("من فضلك اختر العنوان",
                         style: TextStyle(
                             fontSize: 15, fontWeight: FontWeight.normal)),
@@ -286,6 +248,171 @@ class _RegistrationState extends State<Registration> {
                 ),
               ),
             ),
+            customSizedBox(0.0, 10.0),
+            city == null
+                ? Container()
+                : city! == "القاهره"
+                    ? Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Container(
+                          width: double.infinity,
+                          padding: const EdgeInsets.only(right: 10, left: 10),
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              border: Border.all(color: Colors.grey),
+                              borderRadius: BorderRadius.circular(10.0)),
+                          child: DropdownButton<String>(
+                            underline: Container(),
+                            style: TextStyle(
+                                color: darkenAppColor,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20),
+                            hint: const Padding(
+                              padding: EdgeInsets.only(right: 10.0),
+                              child: Text("من فضلك اختر المنطقه",
+                                  style: TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.normal)),
+                            ),
+                            isExpanded: true,
+                            items: cairoRegions.map((String value) {
+                              return DropdownMenuItem<String>(
+                                value: value,
+                                child: Text(value),
+                              );
+                            }).toList(),
+                            value: region,
+                            onChanged: (newValue) {
+                              setState(() {
+                                region = newValue;
+                              });
+                            },
+                          ),
+                        ),
+                      )
+                    : city == "الاسماعيليه"
+                        ? Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Container(
+                              width: double.infinity,
+                              padding:
+                                  const EdgeInsets.only(right: 10, left: 10),
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  border: Border.all(color: Colors.grey),
+                                  borderRadius: BorderRadius.circular(10.0)),
+                              child: DropdownButton<String>(
+                                underline: Container(),
+                                style: TextStyle(
+                                    color: darkenAppColor,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20),
+                                hint: const Padding(
+                                  padding: EdgeInsets.only(right: 10.0),
+                                  child: Text("من فضلك اختر المنطقه",
+                                      style: TextStyle(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.normal)),
+                                ),
+                                isExpanded: true,
+                                items: esmailyaRegions.map((String value) {
+                                  return DropdownMenuItem<String>(
+                                    value: value,
+                                    child: Text(value),
+                                  );
+                                }).toList(),
+                                value: region,
+                                onChanged: (newValue) {
+                                  setState(() {
+                                    region = newValue;
+                                  });
+                                },
+                              ),
+                            ),
+                          )
+                        : city == "السويس"
+                            ? Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Container(
+                                  width: double.infinity,
+                                  padding: const EdgeInsets.only(
+                                      right: 10, left: 10),
+                                  decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      border: Border.all(color: Colors.grey),
+                                      borderRadius:
+                                          BorderRadius.circular(10.0)),
+                                  child: DropdownButton<String>(
+                                    underline: Container(),
+                                    style: TextStyle(
+                                        color: darkenAppColor,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20),
+                                    hint: const Padding(
+                                      padding: EdgeInsets.only(right: 10.0),
+                                      child: Text("من فضلك اختر المنطقه",
+                                          style: TextStyle(
+                                              fontSize: 15,
+                                              fontWeight: FontWeight.normal)),
+                                    ),
+                                    isExpanded: true,
+                                    items: soyesRegions.map((String value) {
+                                      return DropdownMenuItem<String>(
+                                        value: value,
+                                        child: Text(value),
+                                      );
+                                    }).toList(),
+                                    value: region,
+                                    onChanged: (newValue) {
+                                      setState(() {
+                                        region = newValue;
+                                      });
+                                    },
+                                  ),
+                                ),
+                              )
+                            :
+                            //city == "بورسعيد" ?
+                            Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Container(
+                                  width: double.infinity,
+                                  padding: const EdgeInsets.only(
+                                      right: 10, left: 10),
+                                  decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      border: Border.all(color: Colors.grey),
+                                      borderRadius:
+                                          BorderRadius.circular(10.0)),
+                                  child: DropdownButton<String>(
+                                    underline: Container(),
+                                    style: TextStyle(
+                                        color: darkenAppColor,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20),
+                                    hint: const Padding(
+                                      padding: EdgeInsets.only(right: 10.0),
+                                      child: Text("من فضلك اختر المنطقه",
+                                          style: TextStyle(
+                                              fontSize: 15,
+                                              fontWeight: FontWeight.normal)),
+                                    ),
+                                    isExpanded: true,
+                                    items: portSaidRegions.map((String value) {
+                                      return DropdownMenuItem<String>(
+                                        value: value,
+                                        child: Text(value),
+                                      );
+                                    }).toList(),
+                                    value: region,
+                                    onChanged: (newValue) {
+                                      setState(() {
+                                        region = newValue;
+                                      });
+                                    },
+                                  ),
+                                ),
+                              ),
             customSizedBox(0.0, 10.0),
             Padding(
               padding: const EdgeInsets.all(10.0),
